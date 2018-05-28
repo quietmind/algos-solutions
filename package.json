@@ -1,0 +1,38 @@
+{
+  "name": "javascript-problems-and-solutions",
+  "version": "1.7.0",
+  "description": "A collection of JavaScript problems and solutions for studying algorithms.",
+  "main": "index.js",
+  "repository": "https://github.com/jeantimex/javascript-problems-and-solutions.git",
+  "author": "Yong Su <jean.timex@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint ./src",
+    "mocha": "cross-env NODE_ENV=test ./node_modules/.bin/nyc mocha ./src/**/*$FILE*-test.js",
+    "mocha-dev": "cross-env NODE_ENV=test ./node_modules/.bin/nyc mocha --watch ./src/**/*$FILE*-test.js",
+    "test": "npm run lint && npm run mocha",
+    "test-dev": "npm run lint && npm run mocha-dev",
+    "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | coveralls",
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-plugin-istanbul": "^4.1.5",
+    "babel-plugin-module-resolver": "^3.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "cross-env": "^5.0.5",
+    "eslint": "^4.9.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "mocha": "^5.0.0",
+    "nyc": "^11.2.1",
+    "prettier": "^1.7.4",
+    "release-it": "^7.0.2"
+  }
+}
